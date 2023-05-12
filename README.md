@@ -36,10 +36,13 @@ source .devops/bin/activate
 ```
 * Run `make install` to install the necessary dependencies
 
+* Run `make lint` to run lint checks on the project code. If all requirements should be satisfied, and you should see a printed statement that rates your code like below
+  Your code has been rated at 10.00/10
+
 ### Running `app.py`
 
 1. Standalone:  `python app.py`
-2. Run in Docker:  `./run_docker.sh`
+2. Run in Docker:  `./run_docker.sh` 
 3. Run in Kubernetes:  `./run_kubernetes.sh`
 
 ### Kubernetes Steps
@@ -48,3 +51,10 @@ source .devops/bin/activate
 * Setup and Configure Kubernetes locally
 * Create Flask app in Container
 * Run via kubectl
+
+### Explanation of files in the repository.
+* Dockerfile - Docker can build images automatically by reading the instructions from a Dockerfile. The Dockerfile contains all the commands a user could call on the command line to assemble an image.
+* run_docker.sh - In order to run a containerized application, you’ll need to build and run the docker image that you defined in the Dockerfile and then you should be able to test your application, locally, using run_docker.sh
+* make_prediction.sh - To make a prediction, run make_prediction.sh that will send some input data to your containerized application and show the prediction outcome.
+* upload_docker.sh - To upload an image to docker that we build already.
+* run_kubernetes.sh - To deploy your application on the Kubernetes cluster using kubectl, which is a command line interface for interacting with Kubernetes clusters.
