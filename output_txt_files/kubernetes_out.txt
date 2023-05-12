@@ -1,1 +1,11 @@
-<paste log output from Kubernetes-mediated prediction, here>
+(.devops) voclabs:~/environment/UdactiyProject4 (main) $ kubectl get pod
+NAME        READY   STATUS    RESTARTS   AGE
+demolocal   1/1     Running   0          3m10s
+(.devops) voclabs:~/environment/UdactiyProject4 (main) $ ./run_kubernetes.sh
+Error from server (AlreadyExists): pods "demolocal" already exists
+NAME        READY   STATUS    RESTARTS   AGE
+demolocal   1/1     Running   0          3m18s
+Forwarding from 127.0.0.1:8000 -> 80
+Forwarding from [::1]:8000 -> 80
+Handling connection for 8000
+Handling connection for 8000
